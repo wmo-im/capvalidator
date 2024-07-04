@@ -20,8 +20,7 @@
 ###############################################################################
 
 from cap_validator.validate_schema import CheckSchema
-from cap_validator.check_integrity import CheckIntegrity
-from cap_validator.verify_signature import VerifySignature
+from cap_validator.verify_file import CheckIntegrity, VerifySignature
 
 __version__ = '0.1.dev0'
 
@@ -32,12 +31,12 @@ class ValidationResult:
         self.message = message
 
 
-def validate_cap(cap_bytes) -> ValidationResult:
+def validate_cap(cap) -> ValidationResult:
     """Performs the three steps of CAP validation: schema validation,
     integrity check, and signature verification.
 
     Args:
-        cap_bytes (bytes): The CAP alert XML file to be validated.
+        cap (str): The CAP alert XML file contents to be validated.
 
     Returns:
         ValidationResult: The validation status and the associated message
@@ -45,15 +44,15 @@ def validate_cap(cap_bytes) -> ValidationResult:
     """
     # Draft code to demonstrate the process of CAP validation
 
-    follows_schema = CheckSchema(cap_bytes)
+    follows_schema = CheckSchema(cap)
     if not follows_schema:
         return ValidationResult(False, "CAP alert does not follow the schema.")
 
-    hash_matches = CheckIntegrity(cap_bytes)
+    hash_matches = CheckIntegrity(cap)
     if not hash_matches:
         return ValidationResult(False, "CAP alert hash does not match the content.") # noqa
 
-    signature_valid = VerifySignature(cap_bytes)
+    signature_valid = VerifySignature(cap)
     if not signature_valid:
         return ValidationResult(False, "CAP alert has not been signed or the signature is not valid.") # noqa
 

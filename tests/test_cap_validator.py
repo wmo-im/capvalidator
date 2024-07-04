@@ -21,31 +21,34 @@
 
 import pytest
 from cap_validator.validate_schema import CheckSchema
-from cap_validator.check_integrity import CheckIntegrity
-from cap_validator.verify_signature import VerifySignature
+from cap_validator.verify_file import CheckIntegrity, VerifySignature
 
 
 @pytest.fixture
 def valid_alert():
-    with open('data/seychelles.xml', 'rb') as f:
+    with open('data/seychelles.xml',
+              'r', encoding='utf-8') as f:
         return f.read()
 
 
 @pytest.fixture
 def no_identifier():
-    with open('data/no_identifier.xml', 'rb') as f:
+    with open('data/no_identifier.xml',
+              'r', encoding='utf-8') as f:
         return f.read()
 
 
 @pytest.fixture
 def incorrect_digest():
-    with open('data/incorrect_digest.xml', 'rb') as f:
+    with open('data/incorrect_digest.xml',
+              'r', encoding='utf-8') as f:
         return f.read()
 
 
 @pytest.fixture
 def incorrect_signature():
-    with open('data/incorrect_signature.xml', 'rb') as f:
+    with open('data/incorrect_signature.xml',
+              'r', encoding='utf-8') as f:
         return f.read()
 
 
