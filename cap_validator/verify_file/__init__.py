@@ -137,6 +137,7 @@ class VerifySignature:
         algorithm_function = HashAlgorithms[name].value()
         signature_bytes = b64decode(signature)
         try:
+            # TODO: Add the encoded data as the 2nd argument to the verify method
             public_key.verify(
                 signature=signature_bytes,
                 algorihtm=algorithm_function
