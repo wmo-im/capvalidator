@@ -1,17 +1,21 @@
-from cap_validator.integrity import VerifySignature
+from cap_validator.integrity import CheckSignature
 
 
 def test_valid_alert_signature(valid_alert):
-    assert VerifySignature(valid_alert)
+    valid_signature = CheckSignature(valid_alert).validate()
+    assert valid_signature
 
 
 def test_no_identifier_signature(no_identifier):
-    assert VerifySignature(no_identifier)
+    valid_signature = CheckSignature(no_identifier).validate()
+    assert valid_signature
 
 
 def test_incorrect_digest_signature(incorrect_digest):
-    assert VerifySignature(incorrect_digest)
+    valid_signature = CheckSignature(incorrect_digest).validate()
+    assert valid_signature
 
 
 def test_incorrect_signature(incorrect_signature):
-    assert not VerifySignature(incorrect_signature)
+    valid_signature = CheckSignature(incorrect_signature).validate()
+    assert not valid_signature

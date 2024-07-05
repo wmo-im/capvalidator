@@ -21,7 +21,7 @@
 
 from .schema import CheckSchema
 from .integrity import CheckIntegrity
-from .signature import VerifySignature
+from .signature import CheckSignature
 
 __version__ = '0.1.dev0'
 
@@ -30,6 +30,18 @@ class ValidationResult:
     def __init__(self, status, message):
         self.status = status
         self.message = message
+
+
+def check_schema(cap) -> bool:
+    return CheckSchema(cap).validate()
+
+
+def check_integrity(cap) -> bool:
+    return CheckIntegrity(cap).validate()
+
+
+def check_signature(cap) -> bool:
+    return CheckSignature(cap).validate()
 
 
 def validate_cap(cap) -> ValidationResult:
@@ -45,16 +57,16 @@ def validate_cap(cap) -> ValidationResult:
     """
     # Draft code to demonstrate the process of CAP validation
 
-    follows_schema = CheckSchema(cap)
+    follows_schema = check_schema(cap)
     if not follows_schema:
         return ValidationResult(False, "CAP alert does not follow the schema.")
 
-    hash_matches = CheckIntegrity(cap)
+    hash_matches = check_integrity(cap)
     if not hash_matches:
-        return ValidationResult(False, "CAP alert hash does not match the content.") # noqa
+        return ValidationResult(False, "CAP alert hash does not match the content.")  # noqa
 
-    signature_valid = VerifySignature(cap)
+    signature_valid = check_signature(cap)
     if not signature_valid:
-        return ValidationResult(False, "CAP alert has not been signed or the signature is not valid.") # noqa
+        return ValidationResult(False, "CAP alert has not been signed or the signature is not valid.")  # noqa
 
     return ValidationResult(True, "CAP alert is valid.")

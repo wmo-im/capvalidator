@@ -11,7 +11,7 @@ class HashAlgorithms(enum.Enum):
     ecdsa_sha256 = hashes.SHA256
 
 
-class VerifySignature:
+class CheckSignature:
     def __init__(self, cap):
         # ElementTree expects a file-like object
         self.cap = StringIO(cap)

@@ -2,16 +2,20 @@ from cap_validator.schema import CheckSchema
 
 
 def test_valid_alert_schema(valid_alert):
-    assert CheckSchema(valid_alert)
+    follows_schema = CheckSchema(valid_alert).validate()
+    assert follows_schema
 
 
 def test_no_identifier_schema(no_identifier):
-    assert not CheckSchema(no_identifier)
+    follows_schema = CheckSchema(no_identifier).validate()
+    assert not follows_schema
 
 
 def test_incorrect_digest_schema(incorrect_digest):
-    assert CheckSchema(incorrect_digest)
+    follows_schema = CheckSchema(incorrect_digest).validate()
+    assert not follows_schema
 
 
 def test_incorrect_signature_schema(incorrect_signature):
-    assert CheckSchema(incorrect_signature)
+    follows_schema = CheckSchema(incorrect_signature).validate()
+    assert follows_schema
