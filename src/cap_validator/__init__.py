@@ -19,8 +19,9 @@
 #
 ###############################################################################
 
-from cap_validator.validate_schema import CheckSchema
-from cap_validator.verify_file import CheckIntegrity, VerifySignature
+from .schema import CheckSchema
+from .integrity import CheckIntegrity
+from .signature import VerifySignature
 
 __version__ = '0.1.dev0'
 
