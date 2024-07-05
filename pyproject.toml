@@ -21,8 +21,5 @@ dependencies = [
 ]
 dynamic = ["version"]
 
-[tool.setuptools]
-package-dir = {"" = "cap_validator"}
-
 [tool.setuptools.dynamic]
 version = {attr = "cap_validator.__version__"}
