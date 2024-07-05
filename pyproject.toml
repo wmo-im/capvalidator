@@ -21,5 +21,8 @@ dependencies = [
 ]
 dynamic = ["version"]
 
+[tool.setuptools]
+package-dir = {"" = "wis2downloader"}
+
 [tool.setuptools.dynamic]
 version = {attr = "cap_validator.__version__"}
