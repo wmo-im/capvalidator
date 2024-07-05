@@ -1,4 +1,3 @@
-import pytest
 from cap_validator.schema import CheckSchema
 
 
