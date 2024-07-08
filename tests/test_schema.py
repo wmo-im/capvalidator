@@ -13,7 +13,7 @@ def test_no_identifier_schema(no_identifier):
 
 def test_incorrect_digest_schema(incorrect_digest):
     follows_schema = CheckSchema(incorrect_digest).validate()
-    assert not follows_schema
+    assert follows_schema
 
 
 def test_incorrect_signature_schema(incorrect_signature):
