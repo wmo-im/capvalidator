@@ -7,7 +7,15 @@ from base64 import b64encode
 
 
 class HashAlgorithms(enum.Enum):
+    sha1 = hashlib.sha1
+    sha224 = hashlib.sha224
     sha256 = hashlib.sha256
+    sha384 = hashlib.sha384
+    sha512 = hashlib.sha512
+    sha3_224 = hashlib.sha3_224
+    sha3_256 = hashlib.sha3_256
+    sha3_384 = hashlib.sha3_384
+    sha3_512 = hashlib.sha3_512
 
 
 class CheckIntegrity:
@@ -29,6 +37,9 @@ class CheckIntegrity:
         # Calculate the hash of the CAP alert
         alert = self.get_alert_string(root, namespace)
         calculated_hash = self.calculate_hash(alert, algorithm)
+
+        print(f"Actual hash: {hash_value}")
+        print(f"Calculate hash: {calculated_hash}")
 
         return hash_value == calculated_hash
 
@@ -70,7 +81,9 @@ class CheckIntegrity:
             str: The generated hash value.
         """
         name = algorithm.split('#')[-1]
-        hash_function = HashAlgorithms[name].value()
-        hash_value = hash_function(alert).digest()
-        hash_value = b64encode(hash_value).decode()
-        return hash_value
+        h = HashAlgorithms[name].value()
+        # Encode the alert to bytes and update the hash object
+        h.update(alert.encode())
+        digest = h.digest()
+        base64_value = b64encode(digest).decode()
+        return base64_value
