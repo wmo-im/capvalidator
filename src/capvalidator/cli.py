@@ -1,5 +1,5 @@
 import click
-from cap_validator import __version__, validate_cap, check_schema, check_integrity, check_signature # noqa
+from capvalidator import __version__, validate_cap, check_schema, check_integrity, check_signature # noqa
 
 
 @click.group()

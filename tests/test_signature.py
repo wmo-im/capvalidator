@@ -1,4 +1,4 @@
-from cap_validator.signature import CheckSignature
+from capvalidator.signature import CheckSignature
 
 
 def test_valid_alert_signature(valid_alert):

@@ -12,7 +12,7 @@ def remove_signature(root):
         root (Element): The root element of the XML document.
 
     Returns:
-        str: The transformed XML byte string.
+        bytes: The transformed XML byte string.
     """
     signature_element = root.find('.//ds:Signature', namespace)
 

@@ -60,7 +60,7 @@ class CheckSignature:
             certificate (str): The certificate string.
 
         Returns:
-            VerifyingKey: The public key extracted from the certificate.
+            VerifyingKey: The public key object extracted from the certificate.
         """
         if certificate is None:
             return None
@@ -87,9 +87,10 @@ class CheckSignature:
 
         algorithm_class = HashAlgorithms[algorithm].value
         signature_bytes = b64decode(signature)
+
         try:
             public_key.verify(
-                signature_bytes, alert, ec.ECDSA(algorithm_class())
+                signature_bytes, alert, padding.PKCS1v15(), ec.ECDSA(algorithm_class())
             )
             # If the signature is valid, the verify method returns None
             return True

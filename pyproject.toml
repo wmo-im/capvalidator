@@ -3,7 +3,7 @@ requires  = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "cap_validator"
+name = "capvalidator"
 authors = [
     {name = "Rory Burke"}
 ]
@@ -24,4 +24,4 @@ dependencies = [
 dynamic = ["version"]
 
 [tool.setuptools.dynamic]
-version = {attr = "cap_validator.__version__"}
+version = {attr = "capvalidator.__version__"}

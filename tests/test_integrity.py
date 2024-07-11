@@ -1,4 +1,4 @@
-from cap_validator.integrity import CheckIntegrity
+from capvalidator.integrity import CheckIntegrity
 
 
 def test_valid_alert_integrity(valid_alert):

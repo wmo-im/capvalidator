@@ -1,4 +1,4 @@
-from cap_validator.schema import CheckSchema
+from capvalidator.schema import CheckSchema
 
 
 def test_valid_alert_schema(valid_alert):

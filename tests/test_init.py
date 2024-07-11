@@ -1,4 +1,4 @@
-from cap_validator import validate_cap, ValidationResult
+from capvalidator import validate_cap, ValidationResult
 
 
 def test_valid_alert_main(valid_alert):
