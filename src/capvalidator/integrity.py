@@ -36,6 +36,9 @@ class CheckIntegrity:
         # Find the hash method and value
         algorithm = get_algorithm(root, 'digest')
         hash_value_element = root.find('.//ds:DigestValue', namespace)
+        if hash_value_element is None:
+            return False
+
         hash_value = hash_value_element.text
 
         # Calculate the hash of the CAP alert without the signature element

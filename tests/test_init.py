@@ -1,21 +1,41 @@
-from capvalidator import validate_cap, ValidationResult
+import pytest
+from .helpers import get_fixtures
+from capvalidator import validate_xml, ValidationResult
 
 
-def test_valid_alert_main(valid_alert):
-    assert validate_cap(valid_alert) == ValidationResult(
-        True, "CAP alert is valid.")
+valid_fixtures, invalid_schema_fixtures, invalid_integrity_fixtures, invalid_signature_fixtures = get_fixtures()  # noqa
+
+expected_results = []
+
+for fixture in valid_fixtures:
+    result = ValidationResult(True, "CAP file is valid.")
+    expected_results.append((fixture, result))
+
+for fixture in invalid_schema_fixtures:
+    result = ValidationResult(False, "CAP alert does not follow the schema.")
+    expected_results.append((fixture, result))
+
+for fixture in invalid_integrity_fixtures:
+    result = ValidationResult(False, "CAP file digest value not found or it does match the alert content.")  # noqa
+    expected_results.append((fixture, result))
+
+for fixture in invalid_signature_fixtures:
+    result = ValidationResult(False, "CAP file has not been signed or the signature is not valid.")  # noqa
+    expected_results.append((fixture, result))
 
 
-def test_no_identifier_main(no_identifier):
-    assert validate_cap(no_identifier) == ValidationResult(
-        False, "CAP alert does not follow the schema.")
+# Define the pytest_generate_tests hook to generate tests dynamically
+def pytest_generate_tests(metafunc):
+    if 'fixture' in metafunc.fixturenames:
+        # Generate test cases based on the expected results array
+        metafunc.parametrize('fixture,expected_output', expected_results)
 
 
-def test_incorrect_digest_main(incorrect_digest):
-    assert validate_cap(incorrect_digest) == ValidationResult(
-        False, "CAP alert hash does not match the content.")
+# Define the actual test function
+def test_validate_xml(cap, expected_output):
+    # Perform the validation
+    result = validate_xml(cap)
 
-
-def test_incorrect_signature_main(incorrect_signature):
-    assert validate_cap(incorrect_signature) == ValidationResult(
-        False, "CAP alert has not been signed or the signature is not valid.")
+    # Check the result
+    assert result.passed == expected_output.passed
+    assert result.message == expected_output.message

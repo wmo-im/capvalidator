@@ -27,8 +27,8 @@ __version__ = '0.1.dev0'
 
 
 class ValidationResult:
-    def __init__(self, status, message):
-        self.status = status
+    def __init__(self, passed, message):
+        self.passed = passed
         self.message = message
 
 
@@ -44,7 +44,7 @@ def check_signature(cap) -> bool:
     return CheckSignature(cap).validate()
 
 
-def validate_cap(cap) -> ValidationResult:
+def validate_xml(cap) -> ValidationResult:
     """Performs the three steps of CAP validation: schema validation,
     integrity check, and signature verification.
 
@@ -63,10 +63,10 @@ def validate_cap(cap) -> ValidationResult:
 
     hash_matches = check_integrity(cap)
     if not hash_matches:
-        return ValidationResult(False, "CAP alert hash does not match the content.")  # noqa
+        return ValidationResult(False, "CAP file digest value not found or it does match the alert content.")  # noqa
 
     signature_valid = check_signature(cap)
     if not signature_valid:
-        return ValidationResult(False, "CAP alert has not been signed or the signature is not valid.")  # noqa
+        return ValidationResult(False, "CAP file has not been signed or the signature is not valid.")  # noqa
 
-    return ValidationResult(True, "CAP alert is valid.")
+    return ValidationResult(True, "CAP file is valid.")

@@ -1,0 +1,581 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+    <identifier>urn:oid:2.49.0.1.124.2445129344.2024</identifier>
+    <sender>cap-pac@canada.ca</sender>
+    <sent>2024-07-12T13:44:28-00:00</sent>
+    <status>Actual</status>
+    <msgType>Update</msgType>
+    <source>Env. Can. - Can. Met. Ctr. – Montréal</source>
+    <scope>Public</scope>
+    <code>profile:CAP-CP:0.4</code>
+    <code>layer:SOREM:1.0</code>
+    <code>layer:EC-MSC-SMC:1.0</code>
+    <code>layer:EC-MSC-SMC:1.1</code>
+    <code>layer:SOREM:2.0</code>
+    <note>Service Notice - June 2024: The Environment and Climate Change Canada (ECCC) CAP Service undergoes changes from time to time as the business of alerting evolves. For Fall 2024, changes are expected to include... 1) location adjustments to the new Coastal Flooding Warning Program that has been implemented back in Spring 2024, 2) Marine Warning Program and Hurricane Warning Program (for tropical cyclone information statements only) will start to use water zone splits, 3) new parameters in CAP will be created to represent the weather event's start time and the weather event's end time, 4) ECCC's initiative to upgrade the presentation of alerts into a risk-colour tiered structure has begun. More information to be shared in an upcoming release, and 5) other minor improvements and corrections. For more information on these changes: https://comm.collab.science.gc.ca/mailman3/hyperkitty/list/dd_info@comm.collab.science.gc.ca/ | Notification de service - juin 2024: Le service du PAC d’Environnement et Changement climatique Canada (ECCC) subit périodiquement des changements à mesure que le système d’alerte évolue. Pour l’automne 2024, il y aura des changements incluant... 1) des ajustements aux zones du nouveau programme d’avertissement d’inondations côtières qui a été mis en œuvre au printemps 2024, 2) le programme d’avertissement marine et le programme d’avertissement des ouragans (seulement pour le bulletin d'information sur les cyclones tropicaux) commenceront à utiliser des divisions de zones maritimes, 3) de nouveaux paramètres seront créés dans le PAC pour représenter l'heure de début et l'heure de fin de l'événement météorologique, 4) l'initiative d'ECCC visant à améliorer la présentation des alertes en une structure à niveaux de couleurs de risque a commencé. Plus d'informations seront partagées dans un prochain communiqué, et 5) d’autres améliorations et corrections mineures. Pour plus d’informations sur ces changements: https://comm.collab.science.gc.ca/mailman3/hyperkitty/list/dd_info@comm.collab.science.gc.ca/</note>
+    <references>cap-pac@canada.ca,urn:oid:2.49.0.1.124.2627256550.2024,2024-07-12T13:07:09-00:00 cap-pac@canada.ca,urn:oid:2.49.0.1.124.4031901060.2024,2024-07-12T13:24:32-00:00 cap-pac@canada.ca,urn:oid:2.49.0.1.124.1116810286.2024,2024-07-12T13:32:18-00:00 cap-pac@canada.ca,urn:oid:2.49.0.1.124.2830918459.2024,2024-07-12T13:42:18-00:00</references>
+    <info>
+        <language>en-CA</language>
+        <category>Met</category>
+        <event>thunderstorm</event>
+        <responseType>Monitor</responseType>
+        <urgency>Immediate</urgency>
+        <severity>Moderate</severity>
+        <certainty>Likely</certainty>
+        <audience>general public</audience>
+        <eventCode>
+            <valueName>profile:CAP-CP:Event:0.4</valueName>
+            <value>thunderstorm</value>
+        </eventCode>
+        <eventCode>
+            <valueName>SAME</valueName>
+            <value>SVR</value>
+        </eventCode>
+        <effective>2024-07-12T13:42:18-00:00</effective>
+        <expires>2024-07-12T16:41:18-00:00</expires>
+        <senderName>Environment Canada</senderName>
+        <headline>severe thunderstorm warning in effect</headline>
+        <description>
+At 7:42 a.m. CST, Environment Canada meteorologists are tracking an area of severe thunderstorms capable of producing very strong wind gusts, nickel to ping pong ball size hail and heavy rain.
+
+This area stretches from Rosetown to Kyle and eastward to Dinsmore. Storms within this area are moving to the east at 40 km/h.
+
+###
+
+Heavy downpours can cause flash floods and water pooling on roads. Fast-moving water across a road can sweep a vehicle away. Large hail can damage property and cause injury. Strong wind gusts can toss loose objects, damage weak buildings, break branches off trees and overturn large vehicles. Intense lightning is likely with any thunderstorm that develops.
+
+Severe thunderstorm warnings are issued when imminent or occurring thunderstorms are likely to produce or are producing one or more of the following: large hail, damaging winds, torrential rainfall.
+</description>
+        <instruction>
+Take cover immediately, if threatening weather approaches. If visibility is reduced while driving, turn on your lights and maintain a safe following distance. Go indoors and move away from windows and skylights. Lightning kills and injures Canadians every year. Remember, when thunder roars, go indoors!
+</instruction>
+        <web>https://weather.gc.ca/</web>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Alert_Type</valueName>
+            <value>warning</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Broadcast_Intrusive</valueName>
+            <value>no</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:SOREM:1.0:Broadcast_Immediately</valueName>
+            <value>No</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:Parent_URI</valueName>
+            <value>msc/alert/environment/hazard/alert-3.0-ascii/consolidated-xml-2.0/20240712134218767/SK_00_01_LAND/STW/130709737838170026202407120501_SK_00_01_LAND/actual/en_proper_complete_u-fr_proper_complete_c/NinJo</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:CAP_count</valueName>
+            <value>A:8016 M:40139 C:45476</value>
+        </parameter>
+        <parameter>
+            <valueName>profile:CAP-CP:0.4:MinorChange</valueName>
+            <value>text</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Alert_Location_Status</valueName>
+            <value>active</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Alert_Name</valueName>
+            <value>severe thunderstorm warning</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Alert_Coverage</valueName>
+            <value>Saskatchewan</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:SOREM:1.0:Broadcast_Text</valueName>
+            <value>At 7:42 a.m. Central Standard Time Friday, Environment Canada has issued a severe thunderstorm warning for Southwestern and South Central Saskatchewan. Extra care and attention should be exercised in and around the following localities: Herschel, Marriott, Rosetown, Elrose, Fiske, Kyle, Tyner, Cabri, Saskatchewan Landing, Beechy, Lucky Lake, Herbert, Harris, Outlook, Danielson Park, Elbow and Dundurn. Environment Canada meteorologists are tracking an area of severe thunderstorms capable of producing very strong wind gusts, nickel to ping pong ball size hail and heavy rain. Take cover immediately if threatening weather approaches. Intense lightning is likely and tornados are possible with any thunderstorm that develops.</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:Designation_Code</valueName>
+            <value>SK_00_01_LAND</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:SOREM:2.0:WirelessImmediate</valueName>
+            <value>No</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:Alert_Location_Status</valueName>
+            <value>active</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:Newly_Active_Areas</valueName>
+            <value>061211,061212,065516</value>
+        </parameter>
+        <area>
+            <areaDesc>R.M. of Lacadena including Kyle Tyner and Sanctuary</areaDesc>
+            <polygon>50.9607,-107.8105 50.9212,-107.817 50.9223,-107.8108 50.9213,-107.8036 50.795,-107.7965 50.6953,-107.8027 50.6756,-107.804 50.6579,-107.8101 50.6678,-107.8547 50.6617,-107.9064 50.6335,-107.9585 50.6291,-107.9946 50.6532,-108.0774 50.6531,-108.0784 50.6524,-108.0845 50.6345,-108.2366 50.6792,-108.3597 50.7179,-108.3765 50.7507,-108.4066 50.773,-108.4663 50.7951,-108.4874 50.8309,-108.4908 50.8426,-108.4963 50.8434,-108.4967 50.8774,-108.5128 50.9012,-108.5388 50.9219,-108.5145 50.9422,-108.5181 51.0167,-108.5312 51.096,-108.5154 51.102,-108.4213 51.0958,-108.3526 51.1023,-108.2149 51.0956,-108.1087 51.0954,-108.0841 51.0464,-108.0623 51.0152,-108.0661 51.0083,-108.073 51.0145,-107.9427 51.0086,-107.8174 50.9607,-107.8105</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>061211</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4708042</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4708044</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>R.M. of Victory including Beechy</areaDesc>
+            <polygon>50.7024,-107.2519 50.6814,-107.2876 50.6806,-107.3881 50.6765,-107.4142 50.6298,-107.4511 50.612,-107.5468 50.6236,-107.6116 50.6457,-107.65 50.6419,-107.701 50.6386,-107.7446 50.6494,-107.7812 50.6579,-107.8101 50.6756,-107.804 50.6955,-107.8056 50.7941,-107.8136 50.9213,-107.8036 50.9204,-107.811 50.9212,-107.817 50.963,-107.8254 51.0086,-107.8174 51.0134,-107.7449 51.0085,-107.6776 51.0143,-107.4703 51.0088,-107.2589 50.9613,-107.2555 50.9214,-107.2597 50.9215,-107.2553 50.9214,-107.2514 50.8274,-107.2435 50.7751,-107.247 50.7265,-107.2503 50.7105,-107.2381 50.7043,-107.2486 50.7024,-107.2519</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>061212</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4707062</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4707063</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>R.M. of Milden including Dinsmore Milden and Wiseton</areaDesc>
+            <polygon>51.271,-107.4095 51.2673,-107.5415 51.2708,-107.6786 51.2703,-107.6853 51.2707,-107.6909 51.3153,-107.7012 51.3581,-107.691 51.4978,-107.7021 51.6198,-107.691 51.6252,-107.5527 51.6199,-107.4093 51.4488,-107.3945 51.271,-107.4095</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>065513</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4712011</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4712012</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4712014</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4712016</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>R.M. of Fertile Valley including Conquest Macrorie and Bounty</areaDesc>
+            <polygon>51.2785,-106.8206 51.2706,-106.8669 51.269,-106.9071 51.2635,-107.0461 51.2705,-107.2594 51.2668,-107.3261 51.271,-107.4095 51.4522,-107.428 51.6199,-107.4093 51.624,-107.3421 51.62,-107.2787 51.6257,-107.1242 51.6221,-107.0489 51.6198,-107.0005 51.623,-106.9566 51.582,-106.995 51.4456,-107.0255 51.4269,-106.969 51.4049,-106.9415 51.359,-106.9316 51.357,-106.9312 51.3443,-106.9284 51.3338,-106.8762 51.2785,-106.8206</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>065514</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4711027</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4712019</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4712020</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4712022</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>R.M. of King George northwest of Lucky Lake</areaDesc>
+            <polygon>51.2705,-107.2594 51.1461,-107.2432 51.0088,-107.2589 51.0087,-107.2597 51.0021,-107.4701 51.0085,-107.6776 51.1374,-107.6947 51.2708,-107.6786 51.2747,-107.5425 51.271,-107.4095 51.2741,-107.3264 51.2705,-107.2594</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>065515</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4707066</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>R.M. of Coteau including Birsay and Danielson Prov. Park</areaDesc>
+            <polygon>51.2726,-106.91 51.2706,-106.8669 51.2785,-106.8206 51.1919,-106.7665 51.152,-106.7033 51.1252,-106.5945 51.0963,-106.5975 51.0951,-106.5976 51.0763,-106.5996 51.0604,-106.6469 51.0348,-106.6826 51.0093,-106.8573 51.0059,-106.977 51.0038,-107.0445 51.0088,-107.2589 51.1473,-107.2751 51.2705,-107.2594 51.2789,-107.0434 51.2726,-106.91</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>065516</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4707067</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4707068</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>R.M. of St Andrews including Rosetown and Zealandia</areaDesc>
+            <polygon>51.3581,-107.691 51.3483,-107.8837 51.3582,-108.113 51.5513,-108.1192 51.6198,-108.1129 51.6283,-107.9035 51.6198,-107.7046 51.6198,-107.691 51.4988,-107.6784 51.3581,-107.691</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>066364</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4712004</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4712006</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4712008</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>R.M. of Monet including Elrose Wartime and Forgan</areaDesc>
+            <polygon>51.2707,-108.371 51.3163,-108.377 51.3581,-108.3705 51.3627,-108.2329 51.3582,-108.113 51.3667,-107.8747 51.3581,-107.691 51.3133,-107.6805 51.2707,-107.6909 51.2713,-107.6853 51.2708,-107.6786 51.1397,-107.6617 51.0085,-107.6776 51.0042,-107.7416 51.0086,-107.8174 51.0006,-107.9444 51.0083,-108.073 51.0052,-108.0948 51.0956,-108.1087 51.0901,-108.2317 51.0958,-108.3526 51.1948,-108.3675 51.2706,-108.3515 51.2701,-108.3607 51.2707,-108.371</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>066381</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4708092</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4708094</value>
+            </geocode>
+        </area>
+    </info>
+    <info>
+        <language>fr-CA</language>
+        <category>Met</category>
+        <event>orages</event>
+        <responseType>Monitor</responseType>
+        <urgency>Immediate</urgency>
+        <severity>Moderate</severity>
+        <certainty>Likely</certainty>
+        <audience>grand public</audience>
+        <eventCode>
+            <valueName>profile:CAP-CP:Event:0.4</valueName>
+            <value>thunderstorm</value>
+        </eventCode>
+        <eventCode>
+            <valueName>SAME</valueName>
+            <value>SVR</value>
+        </eventCode>
+        <effective>2024-07-12T13:42:18-00:00</effective>
+        <expires>2024-07-12T16:41:18-00:00</expires>
+        <senderName>Environnement Canada</senderName>
+        <headline>alerte d'orages violents en vigueur</headline>
+        <description>
+À 07h42 HNC, les météorologues d’Environnement Canada surveillent une zone d'orages violents pouvant produire des rafales très fortes, de la grêle de la taille d’une pièce de cinq cents  à  une balle de ping-pong et de la pluie forte.
+
+Cette zone d'orages s'étend de Rosetown à Kyle, puis vers l'est jusqu'à Dinsmore.   Les orages dans cette zone se déplacent vers l'est à 40 km/h.
+
+###
+
+Les pluies torrentielles peuvent causer des crues soudaines et une accumulation d'eau sur les routes. Les véhicules peuvent être emportés par les eaux s'écoulant rapidement sur les routes. De la grosse grêle peut endommager des biens et causer des blessures. De fortes rafales peuvent projeter des objets non fixés, endommager des bâtiments peu solides, arracher des branches d'arbres et renverser de gros véhicules. Tout orage qui se formera s'accompagnera probablement de nombreux éclairs.
+
+Une alerte d'orages violents est émise lorsqu'il y a ou qu'il y aura des orages qui s'accompagnent ou qui s'accompagneront probablement d'au moins un des éléments suivants : grosse grêle, vents destructeurs ou pluies torrentielles.
+</description>
+        <instruction>
+Mettez-vous immédiatement à l'abri si un phénomène météorologique menaçant s'approche. Allumez vos phares lorsque la visibilité est réduite et gardez une distance sécuritaire entre les véhicules. Rentrez à l'intérieur et éloignez-vous des fenêtres et des puits de lumière. La foudre tue et blesse des Canadiens chaque année. N'oubliez pas : quand le tonnerre gronde, rentrez vite à l'intérieur!
+</instruction>
+        <web>https://meteo.gc.ca/</web>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Alert_Type</valueName>
+            <value>warning</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Broadcast_Intrusive</valueName>
+            <value>no</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:SOREM:1.0:Broadcast_Immediately</valueName>
+            <value>No</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:Parent_URI</valueName>
+            <value>msc/alert/environment/hazard/alert-3.0-ascii/consolidated-xml-2.0/20240712134218767/SK_00_01_LAND/STW/130709737838170026202407120501_SK_00_01_LAND/actual/en_proper_complete_u-fr_proper_complete_c/NinJo</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:CAP_count</valueName>
+            <value>A:8016 M:40139 C:45476</value>
+        </parameter>
+        <parameter>
+            <valueName>profile:CAP-CP:0.4:MinorChange</valueName>
+            <value>text</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Alert_Location_Status</valueName>
+            <value>active</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Alert_Name</valueName>
+            <value>alerte d'orages violents</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Alert_Coverage</valueName>
+            <value>Saskatchewan</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:SOREM:1.0:Broadcast_Text</valueName>
+            <value>À 07h42 heure normale du Centre le vendredi, Environnement Canada a émis une alerte d'orages violents pour le sud-ouest et le centre-sud  de la Saskatchewan. Une attention et des précautions additionnelles devraient être exercées près et autour des localités suivantes: Herschel, Marriott, Rosetown, Elrose, Fiske, Kyle, Tyner, Cabri, Saskatchewan Landing, Beechy, Lucky Lake, Herbert, Harris, Outlook, Danielson Park, Elbow et Dundurn. Les météorologues d’Environnement Canada surveillent une zone d'orages violents pouvant produire des rafales très fortes, de la grêle de la taille d’une pièce de cinq cents  à  une balle de ping-pong et de la pluie forte. Mettez-vous immédiatement à l'abri si un phénomène météorologique menaçant s'approche. De nombreux éclairs sont probables et il y a toujours un risque de tornade avec un orage.</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:Designation_Code</valueName>
+            <value>SK_00_01_LAND</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:SOREM:2.0:WirelessImmediate</valueName>
+            <value>No</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:Alert_Location_Status</valueName>
+            <value>active</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:Newly_Active_Areas</valueName>
+            <value>061211,061212,065516</value>
+        </parameter>
+        <area>
+            <areaDesc>m.r. de Lacadena incluant Kyle Tyner et Sanctuary</areaDesc>
+            <polygon>50.9607,-107.8105 50.9212,-107.817 50.9223,-107.8108 50.9213,-107.8036 50.795,-107.7965 50.6953,-107.8027 50.6756,-107.804 50.6579,-107.8101 50.6678,-107.8547 50.6617,-107.9064 50.6335,-107.9585 50.6291,-107.9946 50.6532,-108.0774 50.6531,-108.0784 50.6524,-108.0845 50.6345,-108.2366 50.6792,-108.3597 50.7179,-108.3765 50.7507,-108.4066 50.773,-108.4663 50.7951,-108.4874 50.8309,-108.4908 50.8426,-108.4963 50.8434,-108.4967 50.8774,-108.5128 50.9012,-108.5388 50.9219,-108.5145 50.9422,-108.5181 51.0167,-108.5312 51.096,-108.5154 51.102,-108.4213 51.0958,-108.3526 51.1023,-108.2149 51.0956,-108.1087 51.0954,-108.0841 51.0464,-108.0623 51.0152,-108.0661 51.0083,-108.073 51.0145,-107.9427 51.0086,-107.8174 50.9607,-107.8105</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>061211</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4708042</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4708044</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>m.r. de Victory incluant Beechy</areaDesc>
+            <polygon>50.7024,-107.2519 50.6814,-107.2876 50.6806,-107.3881 50.6765,-107.4142 50.6298,-107.4511 50.612,-107.5468 50.6236,-107.6116 50.6457,-107.65 50.6419,-107.701 50.6386,-107.7446 50.6494,-107.7812 50.6579,-107.8101 50.6756,-107.804 50.6955,-107.8056 50.7941,-107.8136 50.9213,-107.8036 50.9204,-107.811 50.9212,-107.817 50.963,-107.8254 51.0086,-107.8174 51.0134,-107.7449 51.0085,-107.6776 51.0143,-107.4703 51.0088,-107.2589 50.9613,-107.2555 50.9214,-107.2597 50.9215,-107.2553 50.9214,-107.2514 50.8274,-107.2435 50.7751,-107.247 50.7265,-107.2503 50.7105,-107.2381 50.7043,-107.2486 50.7024,-107.2519</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>061212</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4707062</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4707063</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>m.r. de Milden incluant Dinsmore Milden et Wiseton</areaDesc>
+            <polygon>51.271,-107.4095 51.2673,-107.5415 51.2708,-107.6786 51.2703,-107.6853 51.2707,-107.6909 51.3153,-107.7012 51.3581,-107.691 51.4978,-107.7021 51.6198,-107.691 51.6252,-107.5527 51.6199,-107.4093 51.4488,-107.3945 51.271,-107.4095</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>065513</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4712011</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4712012</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4712014</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4712016</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>m.r. de Fertile Valley incluant Conquest Macrorie et Bounty</areaDesc>
+            <polygon>51.2785,-106.8206 51.2706,-106.8669 51.269,-106.9071 51.2635,-107.0461 51.2705,-107.2594 51.2668,-107.3261 51.271,-107.4095 51.4522,-107.428 51.6199,-107.4093 51.624,-107.3421 51.62,-107.2787 51.6257,-107.1242 51.6221,-107.0489 51.6198,-107.0005 51.623,-106.9566 51.582,-106.995 51.4456,-107.0255 51.4269,-106.969 51.4049,-106.9415 51.359,-106.9316 51.357,-106.9312 51.3443,-106.9284 51.3338,-106.8762 51.2785,-106.8206</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>065514</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4711027</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4712019</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4712020</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4712022</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>m.r. de King George au nord-ouest de Lucky Lake</areaDesc>
+            <polygon>51.2705,-107.2594 51.1461,-107.2432 51.0088,-107.2589 51.0087,-107.2597 51.0021,-107.4701 51.0085,-107.6776 51.1374,-107.6947 51.2708,-107.6786 51.2747,-107.5425 51.271,-107.4095 51.2741,-107.3264 51.2705,-107.2594</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>065515</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4707066</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>m.r. de Coteau incluant Birsay et Danielson Prov. Park</areaDesc>
+            <polygon>51.2726,-106.91 51.2706,-106.8669 51.2785,-106.8206 51.1919,-106.7665 51.152,-106.7033 51.1252,-106.5945 51.0963,-106.5975 51.0951,-106.5976 51.0763,-106.5996 51.0604,-106.6469 51.0348,-106.6826 51.0093,-106.8573 51.0059,-106.977 51.0038,-107.0445 51.0088,-107.2589 51.1473,-107.2751 51.2705,-107.2594 51.2789,-107.0434 51.2726,-106.91</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>065516</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4707067</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4707068</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>m.r. de St. Andrews incluant Rosetown et Zealandia</areaDesc>
+            <polygon>51.3581,-107.691 51.3483,-107.8837 51.3582,-108.113 51.5513,-108.1192 51.6198,-108.1129 51.6283,-107.9035 51.6198,-107.7046 51.6198,-107.691 51.4988,-107.6784 51.3581,-107.691</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>066364</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4712004</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4712006</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4712008</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>m.r. de Monet incluant Elrose Wartime et Forgan</areaDesc>
+            <polygon>51.2707,-108.371 51.3163,-108.377 51.3581,-108.3705 51.3627,-108.2329 51.3582,-108.113 51.3667,-107.8747 51.3581,-107.691 51.3133,-107.6805 51.2707,-107.6909 51.2713,-107.6853 51.2708,-107.6786 51.1397,-107.6617 51.0085,-107.6776 51.0042,-107.7416 51.0086,-107.8174 51.0006,-107.9444 51.0083,-108.073 51.0052,-108.0948 51.0956,-108.1087 51.0901,-108.2317 51.0958,-108.3526 51.1948,-108.3675 51.2706,-108.3515 51.2701,-108.3607 51.2707,-108.371</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>066381</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4708092</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>4708094</value>
+            </geocode>
+        </area>
+    </info>
+    <Signature Id="NAADS Signature" xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+            <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+            <Reference URI="">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>ia1aDlEonXw4T+tW2qgivNpUV+UF1a0RlIbma5uBBB0=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>sblGFRlyh71UI0uWCDZL185S5kkqCPwTwl7hdx/2NjbH3+vrBnD3yq6SfvNaoBa7xmIfNBiswyJC+vvgfRDGuu59Nf4OBgDu+Ra4y1dTfbNVoBxn55DptzXnvelXaWsOlk6VsgKY7anRlMostXGcOh8/0/WkJoDjj+AmYCDkIHyq5L4MpWSd76BqGEWX+J2gLWx+uHpF5UcQV42923MKmhizOd0oAWedFVSAvP6j78HSrVEAP3vL3j/XoIjZmtXXqU7GkhS17t3jxXgnXQfbKqCgTh4//s3ns3g3P+NxGEJFkBU8kYmKHEa3UbvwMfLy6AxybWqamqqinJXcRBYYTw==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+        <Object xmlns="">
+            <SignatureProperties>
+                <SignatureProperty Id="NAADS-DSS1" Target="https://dss1.naad-adna.pelmorex.com">
+                    <xc:value xmlns:xc="http://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2.xsd" />
+                </SignatureProperty>
+                <SignatureProperty Id="NAADS-DSS2" Target="https://dss2.naad-adna.pelmorex.com">
+                    <xc:value xmlns:xc="http://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2.xsd" />
+                </SignatureProperty>
+            </SignatureProperties>
+        </Object>
+    </Signature>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="Environment Canada">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+            <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+            <Reference URI="">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>ia1aDlEonXw4T+tW2qgivNpUV+UF1a0RlIbma5uBBB0=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>mMLIN/XTKHnY4gaXorDKX7lqNBF4nveMXROcRgQ2VFd6RhNZg+saVE21/tCq+Dqo
+Pt1Cznq7PFXVDPHISrJYHquj3x65Bi/tq15jVGCVJNfszm7aO6Ojs6G5djnX4cCL
+LtLfeYy6mn+q0Ucvd15KhE9cOvi2G1fBCSqa5yLptDIxKTdKBpJtGTL6rhMaNIPR
+anKSSZ2liInQSNXlA0w5PO13vym0LkiaNr+HciOnbku9UGag1AODfwaSRN1Iek10
+VoyXZy1SMPKAbr8sQB5VXBoiQPowW55TFpA7b5SCALukJcFYOt+AJsVXnYsJynKb
+EslySH3X8/B2GpufIC/RHA==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIHDDCCBfSgAwIBAgIQM2dJyev0XEPJoQlSaOQgYDANBgkqhkiG9w0BAQsFADCB
+ujELMAkGA1UEBhMCVVMxFjAUBgNVBAoTDUVudHJ1c3QsIEluYy4xKDAmBgNVBAsT
+H1NlZSB3d3cuZW50cnVzdC5uZXQvbGVnYWwtdGVybXMxOTA3BgNVBAsTMChjKSAy
+MDEyIEVudHJ1c3QsIEluYy4gLSBmb3IgYXV0aG9yaXplZCB1c2Ugb25seTEuMCwG
+A1UEAxMlRW50cnVzdCBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSAtIEwxSzAeFw0y
+NDA0MTkwOTQ3MDZaFw0yNTA1MTkwOTQ3MDRaMGwxCzAJBgNVBAYTAkNBMQ8wDQYD
+VQQIEwZRdWViZWMxETAPBgNVBAcTCEdhdGluZWF1MR8wHQYDVQQKExZTaGFyZWQg
+U2VydmljZXMgQ2FuYWRhMRgwFgYDVQQDDA8qLndlYXRoZXIuZ2MuY2EwggEiMA0G
+CSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDARd6fBVAjKlOvocp442ydQbSCoxHW
+91i1r5TkucsGLkzm92HQsj4eVNCl6Uti3hd3yYL1QxFTImdyUs2ETlDoU/hVFEey
+IevKo3m3ufuv9YryXGtoRcthMITEPrIy6vOyNbGaxJw1J6/AkOs7oAm3kUlx6PS8
+vOnuoyik1r6Q9qx1XP9Z05cIyyIBhsyjdS124Jj01quCjz5COPMXKU1LlaU8LeSA
+qILe9DyC3XWluZGxZH+tGiw42mpiCD3JGlCsXQujU5y4jg2fq8/ePsM3OUzM/Dxs
+kGMMN7LAG9/H4CINJ+aXZQvlgTfIZp2eWLvHy5dnsbi3VAJOEtgRVzedAgMBAAGj
+ggNZMIIDVTAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBSSLKB4osVSIvgfhk+6NayJ
+BDAXuDAfBgNVHSMEGDAWgBSConB03bxTP8971PfNf6dgxgpMvzBoBggrBgEFBQcB
+AQRcMFowIwYIKwYBBQUHMAGGF2h0dHA6Ly9vY3NwLmVudHJ1c3QubmV0MDMGCCsG
+AQUFBzAChidodHRwOi8vYWlhLmVudHJ1c3QubmV0L2wxay1jaGFpbjI1Ni5jZXIw
+MwYDVR0fBCwwKjAooCagJIYiaHR0cDovL2NybC5lbnRydXN0Lm5ldC9sZXZlbDFr
+LmNybDCBnQYDVR0RBIGVMIGSgg8qLndlYXRoZXIuZ2MuY2GCDXdlYXRoZXIuZ2Mu
+Y2GCC21ldGVvLmdjLmNhgg0qLm1ldGVvLmdjLmNhghUqLmFscGhhLndlYXRoZXIu
+Z2MuY2GCEyouYWxwaGEubWV0ZW8uZ2MuY2GCFCouYmV0YS53ZWF0aGVyLmdjLmNh
+ghIqLmJldGEubWV0ZW8uZ2MuY2EwDgYDVR0PAQH/BAQDAgWgMB0GA1UdJQQWMBQG
+CCsGAQUFBwMBBggrBgEFBQcDAjATBgNVHSAEDDAKMAgGBmeBDAECAjCCAYAGCisG
+AQQB1nkCBAIEggFwBIIBbAFqAHYAouMK5EXvva2bfjjtR2d3U9eCW4SU1yteGyzE
+uVCkR+cAAAGO9cCizQAABAMARzBFAiEA7hlkvyyYsnhbas5WDwoTkdGWf92Ukckw
+rGyUqMPZQjkCID8oQlHWS11haifx+i9tBr0epmrzkh2/bbneb9WNrlUvAHcATnWj
+J1yaEMM4W2zU3z9S6x3w4I4bjWnAsfpksWKaOd8AAAGO9cCi2AAABAMASDBGAiEA
+iE1jLaXrlPxrkIiq7NU0gH/sDiUlHCmMrT79KUy2V+YCIQCb2GrTID6NO3hb8bGs
+ctd8ipYRuu1FnDY8X3MGVDcWnAB3AObSMWNAd4zBEEEG13G5zsHSQPaWhIb7uocy
+Hf0eN45QAAABjvXAovkAAAQDAEgwRgIhALRWB9aVOe3Zi9j6MEVKJl1NKQKIycr3
+8IfKeHxckblpAiEA85xjN3iBFvEVT4yIxO4qKRelbpFGomgSrYnfwTSUwHIwDQYJ
+KoZIhvcNAQELBQADggEBADGEK5tU92TqoTWPh1lfSRTDVCpk5qhqmIuaTeYQMonV
+AgHF5rktrUhXmMzRJEef8XRwLvApT4zOn+TV+NOUpi8q6tDWxx7dE8+moIf6tXq8
+d4OQ+VDO/C6nz/xA8FqvxAbPfqCJ6DqgitSyXhF01XkNMfVcknGAzhc/HemuukI1
+3DTuaATlbaXkHjSp+O0mXCykCIgH/9eMuOoFMzhdQhtJiLf2MMVclJ72/YzgVveA
+XrSTVE5F4BYdp9hX+0BTg5zNgg1wwvVVOwuIOTFqSSJCzGHjl/1i8IyyPLKB3ilt
+B+0V7IdmIxlvPbL//qNkzyUVufkewAoLMqCOUIZA0eY=</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</alert>

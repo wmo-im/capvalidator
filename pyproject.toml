@@ -16,7 +16,6 @@ requires-python = ">=3.8"
 keywords = ["WIS2.0", "CAP", "XML", "validator"]
 license = {file = "LICENSE"}
 dependencies = [
-    "pytest>=8.2.2",
     "click>=8.1.7",
     "lxml>=5.2.2",
     "cryptography>=42.0.8",

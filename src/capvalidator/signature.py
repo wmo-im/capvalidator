@@ -44,6 +44,9 @@ class CheckSignature:
         # Extract signature and hash method used
         signature_element = root.find(
             './/ds:SignatureValue', namespaces=namespace)
+        if signature_element is None:
+            return False
+
         signature = signature_element.text
 
         algorithm = get_algorithm(root, 'signature')
