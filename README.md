@@ -18,5 +18,5 @@
 __NOTE__: The downloader has not yet been uploaded to PyPI and needs to be installed directly from GitHub:
 
 ```bash
-pip install https://github.com/wmo-im/cap-validator/archive/main.zip
+pip install https://github.com/wmo-im/capvalidator/archive/main.zip
 ```
