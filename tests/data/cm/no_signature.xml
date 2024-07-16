@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="https://cap-sources.s3.amazonaws.com/cm-meteo-fr/alert-style.xsl" ?>
+<cap:alert xmlns:cap="urn:oasis:names:tc:emergency:cap:1.2">
+    <cap:identifier>urn:oid:2.49.0.1.120.0.2024.7.16.13.23.2</cap:identifier>
+    <cap:sender>meteo.cameroon@gmail.com</cap:sender>
+    <cap:sent>2024-07-16T15:23:02+02:00</cap:sent>
+    <cap:status>Actual</cap:status>
+    <cap:msgType>Alert</cap:msgType>
+    <cap:scope>Public</cap:scope>
+    <cap:info>
+        <cap:language>fr</cap:language>
+        <cap:category>Met</cap:category>
+        <cap:event>Fortes pluies et vents violents</cap:event>
+        <cap:responseType>Prepare</cap:responseType>
+        <cap:urgency>Expected</cap:urgency>
+        <cap:severity>Moderate</cap:severity>
+        <cap:certainty>Possible</cap:certainty>
+        <cap:onset>2024-07-16T18:00:00+01:00</cap:onset>
+        <cap:expires>2024-07-17T18:00:00+01:00</cap:expires>
+        <cap:senderName>Direction de la Météorologie Nationale</cap:senderName>
+        <cap:headline>Alerte des précipitations modérées à fortes associées à des orages et des vents modérés à forts</cap:headline>
+        <cap:description>Des pluies orageuses modérées à fortes, susceptibles de d’intensifier sont attendues dans la majorité de la bande côtière, les hautes terres de l'ouest, avec extension dans certaines localités du Septentrion.  
+  Il existe un risque moyen d'enregistrer des inondations dans les bassins de drainage,  des chutes d'arbres et d'infrastructures fragiles.</cap:description>
+        <cap:instruction>Il est fortement recommandé d'éviter les canaux de drainage, les zones inondables, de débrancher les appareils électriques, d'éviter de s'abriter sous les arbres ainsi que les infrastructures fragiles, et de rester éveiller pour suivre la situation.</cap:instruction>
+        <cap:web>https://www.meteocameroon.gov.cm</cap:web>
+        <cap:contact>meteo.cameroon@gmail.com</cap:contact>
+        <cap:area>
+            <cap:areaDesc>Septentrion, Nord-Ouest, Sud-Ouest, Ouest et Littoral.</cap:areaDesc>
+            <cap:polygon>6.5991,11.2720 6.7519,11.0303 6.9700,10.7666 7.1009,10.5469 6.9482,10.3052 6.9482,10.0854 6.7955,9.7998 6.2935,9.3384 5.8128,8.7231 5.5722,8.8770 5.2441,8.8550 4.4560,8.3057 4.1492,8.7012 3.8862,8.9868 3.6011,9.3823 3.2063,9.6021 3.2941,9.9756 3.6011,10.2173 4.2149,10.6128 4.8064,10.9424 5.1566,11.1182 5.4410,11.4917 5.7690,12.3486 5.9220,12.8540 6.1624,13.4692 6.4463,14.1724 6.7519,14.5239 7.1009,14.7217 7.6892,14.8755 8.3420,14.8535 8.7331,14.2603 8.8417,13.2715 8.8417,12.7881 8.5810,12.4805 8.1027,12.1509 7.4278,11.8872 7.1227,11.8433 6.7301,11.5137 6.5991,11.2720</cap:polygon>
+        </cap:area>
+    </cap:info>
+</cap:alert>

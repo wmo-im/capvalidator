@@ -19,9 +19,7 @@
 #
 ###############################################################################
 
-from .schema import CheckSchema
-from .integrity import CheckIntegrity
-from .signature import CheckSignature
+from .validate import Validator
 
 __version__ = '0.1.dev0'
 
@@ -32,16 +30,18 @@ class ValidationResult:
         self.message = message
 
 
-def check_schema(cap) -> bool:
-    return CheckSchema(cap).validate()
+def check_schema(cap) -> tuple:
+    """Interface to the schema validation method of the Validator class, which
+    is used in the CLI.
+    """
+    return Validator(cap).schema()
 
 
-def check_integrity(cap) -> bool:
-    return CheckIntegrity(cap).validate()
-
-
-def check_signature(cap) -> bool:
-    return CheckSignature(cap).validate()
+def check_signature(cap) -> tuple:
+    """Interface to the signature verification method of the Validator class,
+    which is used in the CLI.
+    """
+    return Validator(cap).signature()
 
 
 def validate_xml(cap) -> ValidationResult:
@@ -57,16 +57,12 @@ def validate_xml(cap) -> ValidationResult:
     """
     # Draft code to demonstrate the process of CAP validation
 
-    follows_schema = check_schema(cap)
+    follows_schema, msg = check_schema(cap)
     if not follows_schema:
-        return ValidationResult(False, "CAP alert does not follow the schema.")
+        return ValidationResult(False, msg)
 
-    hash_matches = check_integrity(cap)
-    if not hash_matches:
-        return ValidationResult(False, "CAP file digest value not found or it does match the alert content.")  # noqa
-
-    signature_valid = check_signature(cap)
+    signature_valid, msg = check_signature(cap)
     if not signature_valid:
-        return ValidationResult(False, "CAP file has not been signed or the signature is not valid.")  # noqa
+        return ValidationResult(False, msg)  # noqa
 
-    return ValidationResult(True, "CAP file is valid.")
+    return ValidationResult(True, "CAP XML file is valid.")
