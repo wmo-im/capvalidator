@@ -63,7 +63,7 @@ class Validator:
         certificate_data = certificate_element.text.strip()
 
         # Format the certificate data as a PEM certificate
-        certificate_pem = f"-----BEGIN CERTIFICATE-----\n{certificate_data}\n-----END CERTIFICATE-----"
+        certificate_pem = f"-----BEGIN CERTIFICATE-----\n{certificate_data}\n-----END CERTIFICATE-----" # noqa
 
         try:
             XMLVerifier().verify(root, x509_cert=certificate_pem).signed_xml

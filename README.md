@@ -6,17 +6,94 @@
 
 ## Features
 
-- Validating the alert against the OASIS CAP 1.2 schema.
-- File integrity checking.
-- Digital signature verification.
+- **Schema Validation**: Ensure your CAP XML file follows the [CAP v1.2 standard](https://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html).
+- **Digital Signature Validation**: Verify that the CAP XML file comes from a legitimate source and has not been tampered with.
 
 
 ## Getting Started
 
 ### 1. Installation
 
-__NOTE__: The downloader has not yet been uploaded to PyPI and needs to be installed directly from GitHub:
+```bash
+pip install capvalidator
+```
+
+### 2A. Using the API
+
+We can perform a total validation of the CAP XML file:
+```python
+from capvalidator import validate_xml
+
+# Read the CAP XML file as a string
+with open(<cap-file-directory>, "r") as f:
+    cap = f.read()
+
+# Perform the validation
+result = validate_xml(cap)
+
+# Check the result
+passed = result.passed
+msg = result.msg
+
+if not passed:
+    # Logic for handling invalid CAP file
+
+# Logic for handling valid CAP file
+```
+
+Or, alternatively, a more refined validation:
+```python
+from capvalidator import check_schema, check_signature
+
+# Read the CAP XML file as a string
+with open(<cap-file-directory>, "r") as f:
+    cap = f.read()
+
+# Validate the schema
+schema_result = check_schema(cap)
+
+# Check the results
+passed = schema_result.passed
+msg = schema_result.msg
+
+if not passed:
+    # Logic for handling invalid CAP file
+
+# Validate the signature
+signature_result = check_signature(cap)
+
+# Check the results
+passed = signature_result.passed
+msg = signature_result.msg
+
+if not passed:
+    # Logic for handling invalid CAP file
+
+# Logic for handling valid CAP file
+
+```
+
+### 2B. Using the CLI
+
+We can perform a total validation of the CAP XML file:
 
 ```bash
-pip install https://github.com/wmo-im/capvalidator/archive/main.zip
+capvalidator validate <cap-file-directory>
 ```
+
+Or, alternatively, more refined validations:
+```bash
+capvalidator validate --type schema <cap-file-directory>
+```
+
+```bash
+capvalidator validate --type signature <cap-file-directory>
+```
+
+## Bugs and Issues
+
+All bugs, enhancements and issues are managed on [GitHub](https://github.com/wmo-im/capvalidator/issues).
+
+## Contact
+
+* [Rory Burke](https://github.com/RoryPTB)
