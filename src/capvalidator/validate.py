@@ -68,7 +68,8 @@ class Validator:
         try:
             XMLVerifier().verify(root, x509_cert=certificate_pem).signed_xml
             return True, "CAP alert signature is valid."
-        except (InvalidSignature, DocumentInvalid):
+        except (InvalidSignature, DocumentInvalid) as e:
+            print(e)
             return False, "CAP alert signature is invalid or the data has been tampered with."  # noqa
 
     def canonicalize_xml(self):
@@ -81,4 +82,4 @@ class Validator:
         """
         parser = ET.XMLParser(remove_blank_text=True)
         xml_tree = ET.XML(self.cap, parser=parser)
-        return ET.tostring(xml_tree)
+        return ET.tostring(xml_tree, method="c14n2", exclusive=True, with_comments=False)
