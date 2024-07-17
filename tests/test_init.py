@@ -43,7 +43,7 @@ valid_fixtures, invalid_schema_fixtures, invalid_signature_fixtures, no_signatur
 expected_results = []
 
 for fixture in valid_fixtures:
-    result = ValidationResult(True, "CAP file is valid.")
+    result = ValidationResult(True, "CAP XML file is valid.")
     expected_results.append((fixture, result))
 
 for fixture in invalid_schema_fixtures:
@@ -65,6 +65,8 @@ for fixture in no_signature_fixture:
 
 @pytest.mark.parametrize("cap, expected_output", expected_results)
 def test_validate_xml(cap, expected_output):
+    print(cap)
+    
     # Perform the validation
     result = validate_xml(cap)
 
