@@ -9,6 +9,7 @@
 - **Schema Validation**: Ensure your CAP XML file follows the [CAP v1.2 standard](https://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html).
 - **Digital Signature Validation**: Verify that the CAP XML file comes from a legitimate source and has not been tampered with.
 
+*Note: Currently, only certificates issued by a trused certificate authority (CA) are supported. This means signatures with a self-signed certificate will **not** pass the validation.*
 
 ## Getting Started
 
