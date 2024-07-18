@@ -6,8 +6,7 @@ from signxml import XMLVerifier, InvalidSignature
 
 class Validator:
     def __init__(self, cap):
-        # LXML requires the XML string to be encoded
-        self.cap = cap.encode("utf-8")
+        self.cap = cap
 
     def schema(self):
         """Validates the CAP alert against the CAP 1.2 schema.

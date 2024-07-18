@@ -55,6 +55,12 @@ def check_signature(cap) -> tuple:
 def get_dates(cap) -> DateResult:
     """Interface to the date extraction method of the Validator class, which
     can be used in the API.
+
+    Args:
+        cap (bytes): The CAP alert XML file byte contents to be parsed.
+
+    Returns:
+        DateResult: The extracted date-time values.
     """
     dates = Validator(cap).get_dates()
     return DateResult(dates['sent'],
@@ -64,11 +70,11 @@ def get_dates(cap) -> DateResult:
 
 
 def validate_xml(cap) -> ValidationResult:
-    """Performs the three steps of CAP validation: schema validation,
-    integrity check, and signature verification.
+    """Performs the two steps of CAP validation: schema validation
+    and signature verification.
 
     Args:
-        cap (str): The CAP alert XML file contents to be validated.
+        cap (bytes): The CAP alert XML file byte contents to be validated.
 
     Returns:
         ValidationResult: The validation status and the associated message

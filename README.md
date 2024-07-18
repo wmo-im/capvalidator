@@ -25,8 +25,8 @@ We can perform a total validation of the CAP XML file:
 ```python
 from capvalidator import validate_xml
 
-# Read the CAP XML file as a string
-with open(<cap-file-directory>, "r") as f:
+# Read the CAP XML file as a byte string
+with open(<cap-file-directory>, "rb") as f:
     cap = f.read()
 
 # Perform the validation
@@ -46,8 +46,8 @@ Or, alternatively, a more refined validation:
 ```python
 from capvalidator import check_schema, check_signature
 
-# Read the CAP XML file as a string
-with open(<cap-file-directory>, "r") as f:
+# Read the CAP XML file as a byte string
+with open(<cap-file-directory>, "rb") as f:
     cap = f.read()
 
 # Validate the schema
@@ -78,8 +78,8 @@ There is also a date extractor which you may find useful:
 ```python
 from capvalidator import get_dates
 
-# Read the CAP XML file as a string
-with open(<cap-file-directory>, "r") as f:
+# Read the CAP XML file as a byte string
+with open(<cap-file-directory>, "rb") as f:
     cap = f.read()
 
 dts = get_dates(cap)

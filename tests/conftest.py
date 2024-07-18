@@ -18,7 +18,7 @@ def generate_fixture(file_path):
     @pytest.fixture(scope='module')
     def xml_fixture():
         """Contains the contents of the XML file."""
-        with open(file_path, 'r', encoding='utf-8') as f:
+        with open(file_path, 'rb') as f:
             return f.read()
     return xml_fixture
 
