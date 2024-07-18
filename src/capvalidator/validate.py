@@ -2,6 +2,7 @@ from pkg_resources import resource_string
 from lxml import etree as ET
 from lxml.etree import DocumentInvalid
 from signxml import XMLVerifier, InvalidSignature
+from datetime import datetime, timezone
 
 
 class Validator:
@@ -97,9 +98,30 @@ class Validator:
         effective_element = root.find('.//cap:effective', namespace)
         onset_element = root.find('.//cap:onset', namespace)
         expires_element = root.find('.//cap:expires', namespace)
+
+        sent = sent_element.text if sent_element is not None else None
+        effective = effective_element.text if effective_element is not None else None
+        onset = onset_element.text if onset_element is not None else None
+        expiry = expires_element.text if expires_element is not None else None
+
         return {
-            'sent': sent_element.text,
-            'effective': effective_element.text,
-            'onset': onset_element.text,
-            'expiry': expires_element.text
+            'sent': self.format_date(sent),
+            'effective': self.format_date(effective),
+            'onset': self.format_date(onset),
+            'expiry': self.format_date(expiry)
         }
+
+    def format_date(self, dt_string: str) -> str:
+        """Converts the datetime string to UTC ISO format.
+
+        Args:
+            dt_string (str): The date-time string to convert.
+
+        Returns:
+            str: The converted datetime object.
+        """
+        # Parse the datetime string to a datetime object
+        dt_with_tz = datetime.fromisoformat(dt_string)
+        # Convert to UTC and format as ISO string
+        dt_utc = dt_with_tz.astimezone(timezone.utc)
+        return dt_utc.strftime("%Y-%m-%dT%H:%M:%SZ")
