@@ -100,7 +100,7 @@ class Validator:
         expires_element = root.find('.//cap:expires', namespace)
 
         sent = sent_element.text if sent_element is not None else None
-        effective = effective_element.text if effective_element is not None else None
+        effective = effective_element.text if effective_element is not None else None # noqa
         onset = onset_element.text if onset_element is not None else None
         expiry = expires_element.text if expires_element is not None else None
 
