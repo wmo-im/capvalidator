@@ -1,4 +1,4 @@
-from pkg_resources import resource_string
+from importlib.resources import files
 from lxml import etree as ET
 from lxml.etree import DocumentInvalid
 from signxml import XMLVerifier, InvalidSignature
@@ -32,9 +32,9 @@ class Validator:
             XMLParser: The schema validator parser object.
         """
         # Load the XSD schema
-        schema_bytes = resource_string(__name__,
-                                       "static/CAP-v1.2-schema.xsd"
-                                       ).decode("utf-8")
+        resource = files('capvalidator').joinpath('static/CAP-v1.2-schema.xsd')
+        with resource.open() as f:
+            schema_bytes = f.read()
         # Create the parser object
         schema_root = ET.XML(schema_bytes)
         schema = ET.XMLSchema(schema_root)
