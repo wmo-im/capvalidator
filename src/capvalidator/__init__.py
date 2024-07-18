@@ -30,6 +30,14 @@ class ValidationResult:
         self.message = message
 
 
+class DateResult:
+    def __init__(self, sent, effective, onset, expiry):
+        self.sent = sent
+        self.effective = effective
+        self.onset = onset
+        self.expiry = expiry
+
+
 def check_schema(cap) -> tuple:
     """Interface to the schema validation method of the Validator class, which
     is used in the CLI.
@@ -44,11 +52,15 @@ def check_signature(cap) -> tuple:
     return Validator(cap).signature()
 
 
-def get_dates(cap) -> str:
+def get_dates(cap) -> DateResult:
     """Interface to the date extraction method of the Validator class, which
     can be used in the API.
     """
-    return Validator(cap).get_dates()
+    dates = Validator(cap).get_dates()
+    return DateResult(dates['sent'],
+                      dates['effective'],
+                      dates['onset'],
+                      dates['expiry'])
 
 
 def validate_xml(cap) -> ValidationResult:
