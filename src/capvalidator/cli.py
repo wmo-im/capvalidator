@@ -16,7 +16,7 @@ def cli():
               type=click.Choice(['total', 'schema', 'signature']),
               required=False, default='total')
 @click.argument('cap_xml', type=click.File(errors="ignore"))
-def validate(ctx, cap_xml, type):
+def validate(ctx, cap_xml, type) -> None:
     """Validate a CAP alert"""
 
     cap = cap_xml.read()

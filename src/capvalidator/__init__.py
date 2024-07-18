@@ -44,11 +44,11 @@ def check_signature(cap) -> tuple:
     return Validator(cap).signature()
 
 
-def get_date(cap) -> str:
+def get_dates(cap) -> str:
     """Interface to the date extraction method of the Validator class, which
     can be used in the API.
     """
-    return Validator(cap).get_date()
+    return Validator(cap).get_dates()
 
 
 def validate_xml(cap) -> ValidationResult:

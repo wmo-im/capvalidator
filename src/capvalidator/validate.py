@@ -25,11 +25,11 @@ class Validator:
         except ET.XMLSyntaxError:
             return False, "CAP alert does not follow the CAP v1.2 schema."
 
-    def get_schema_parser(self):
+    def get_schema_parser(self) -> ET.XMLParser:
         """Performs the necessary steps to prepare the schema validator.
 
         Returns:
-            XMLSchema: The schema validator object.
+            XMLParser: The schema validator parser object.
         """
         # Load the XSD schema
         schema_bytes = resource_string(__name__,
@@ -40,7 +40,7 @@ class Validator:
         schema = ET.XMLSchema(schema_root)
         return ET.XMLParser(schema=schema)
 
-    def signature(self):
+    def signature(self) -> tuple:
         """Verifies the digital signature and digest value of the CAP alert.
 
         Returns:
@@ -71,7 +71,7 @@ class Validator:
         except (InvalidSignature, DocumentInvalid):
             return False, "CAP alert signature is invalid or the data has been tampered with."  # noqa
 
-    def canonicalize_xml(self):
+    def canonicalize_xml(self) -> bytes:
         """Parses the CAP XML in canonicalized form so that it is
         in a standard format. This ensures that every byte of the
         XML is the same for the signature to verify correctly.
@@ -83,11 +83,11 @@ class Validator:
         xml_tree = ET.XML(self.cap, parser=parser)
         return ET.tostring(xml_tree)
 
-    def get_date(self):
-        """Extracts the sent date-time from the CAP alert.
+    def get_dates(self) -> dict:
+        """Extracts the four date-time values from the CAP alert.
 
         Returns:
-            str: The sent date-time.
+            dict: The extracted date-time values.
         """
         root = ET.fromstring(self.cap)
 
@@ -95,4 +95,12 @@ class Validator:
         namespace = {'cap': 'urn:oasis:names:tc:emergency:cap:1.2'}
 
         sent_element = root.find('.//cap:sent', namespace)
-        return sent_element.text
+        effective_element = root.find('.//cap:effective', namespace)
+        onset_element = root.find('.//cap:onset', namespace)
+        expires_element = root.find('.//cap:expires', namespace)
+        return {
+            'sent': sent_element.text,
+            'effective': effective_element.text,
+            'onset': onset_element.text,
+            'expiry': expires_element.text
+        }
