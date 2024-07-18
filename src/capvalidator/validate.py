@@ -63,7 +63,7 @@ class Validator:
         certificate_data = certificate_element.text.strip()
 
         # Format the certificate data as a PEM certificate
-        certificate_pem = f"-----BEGIN CERTIFICATE-----\n{certificate_data}\n-----END CERTIFICATE-----" # noqa
+        certificate_pem = f"-----BEGIN CERTIFICATE-----\n{certificate_data}\n-----END CERTIFICATE-----"  # noqa
 
         try:
             XMLVerifier().verify(root, x509_cert=certificate_pem).signed_xml
@@ -82,3 +82,17 @@ class Validator:
         parser = ET.XMLParser(remove_blank_text=True)
         xml_tree = ET.XML(self.cap, parser=parser)
         return ET.tostring(xml_tree)
+
+    def get_date(self):
+        """Extracts the sent date-time from the CAP alert.
+
+        Returns:
+            str: The sent date-time.
+        """
+        root = ET.fromstring(self.cap)
+
+        # Register the namespace
+        namespace = {'cap': 'urn:oasis:names:tc:emergency:cap:1.2'}
+
+        sent_element = root.find('.//cap:sent', namespace)
+        return sent_element.text
