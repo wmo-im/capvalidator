@@ -1,6 +1,11 @@
 import pytest
+import sys
 import os
 from glob import glob
+
+# Add the current directory to the Python path so that the utils
+# module can be imported in the test files
+sys.path.append(os.path.dirname(__file__))
 
 # Data for testing
 data_dir = 'tests/data'
@@ -10,10 +15,9 @@ xml_files = glob(os.path.join(data_dir, '**/*.xml'))
 
 
 def generate_fixture(file_path):
-    @pytest.fixture()
-    def xml_fixture(scope='module'):
+    @pytest.fixture(scope='module')
+    def xml_fixture():
         """Contains the contents of the XML file."""
-        print(f"Loading fixture: {file_path}")
         with open(file_path, 'r', encoding='utf-8') as f:
             return f.read()
     return xml_fixture
