@@ -74,6 +74,22 @@ if not passed:
 
 ```
 
+There is also a date extractor which you may find useful:
+```python
+from capvalidator import get_dates
+
+# Read the CAP XML file as a string
+with open(<cap-file-directory>, "r") as f:
+    cap = f.read()
+
+dts = get_dates(cap)
+
+sent_date = dts.sent
+effective_date = dts.effective
+onset_date = dts.onset
+expiry_date = dts.expiry
+```
+
 ### 2B. Using the CLI
 
 We can perform a total validation of the CAP XML file:
