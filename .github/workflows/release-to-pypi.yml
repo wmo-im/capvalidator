@@ -112,17 +112,17 @@ jobs:
       id-token: write
 
     steps:
-      - name: Download all the dists
-        uses: actions/download-artifact@v3
-        with:
-          name: python-package-distributions
-          path: dist/
       - name: Append timestamp to version to make it unique
         run: |
           VERSION=$(grep '__version__' src/capvalidator/__init__.py | awk '{print $3}' | tr -d "'\"")
           TIMESTAMP=$(date -u "+%Y%m%d%H%M%S")
           NEW_VERSION="${VERSION}-${TIMESTAMP}"
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
+      - name: Download all the dists
+        uses: actions/download-artifact@v3
+        with:
+          name: python-package-distributions
+          path: dist/
       - name: Publish distribution 📦 to TestPyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
