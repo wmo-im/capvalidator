@@ -21,13 +21,12 @@ def validate(ctx, cap_xml, validation_type) -> None:
 
     cap = cap_xml.read()
 
-    match validation_type:
-        case "total":
-            result = validate_cap(cap)
-        case "schema":
-            result = check_schema(cap)
-        case "signature":
-            result = check_signature(cap)
+    if validation_type == "total":
+        result = validate_cap(cap)
+    elif validation_type == "schema":
+        result = check_schema(cap)
+    elif validation_type == "signature":
+        result = check_signature(cap)
 
     click.echo(f"{result.passed}: {result.message}")
 
