@@ -117,7 +117,7 @@ jobs:
           path: dist/
       - name: Append timestamp to version to make it unique
         run: |
-          VERSION=$(grep '__version__' capvalidator/__init__.py | awk '{print $3}' | tr -d "'\"")
+          VERSION=$(grep '__version__' src/capvalidator/__init__.py | awk '{print $3}' | tr -d "'\"")
           TIMESTAMP=$(date -u "+%Y%m%d%H%M%S")
           NEW_VERSION="${VERSION}-${TIMESTAMP}"
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
