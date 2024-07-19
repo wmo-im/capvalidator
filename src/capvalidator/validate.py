@@ -100,28 +100,13 @@ class Validator:
         expires_element = root.find('.//cap:expires', namespace)
 
         sent = sent_element.text if sent_element is not None else None
-        effective = effective_element.text if effective_element is not None else None # noqa
+        effective = effective_element.text if effective_element is not None else None  # noqa
         onset = onset_element.text if onset_element is not None else None
         expiry = expires_element.text if expires_element is not None else None
 
         return {
-            'sent': self.format_date(sent),
-            'effective': self.format_date(effective),
-            'onset': self.format_date(onset),
-            'expiry': self.format_date(expiry)
+            'sent': sent,
+            'effective': effective,
+            'onset': onset,
+            'expiry': expiry
         }
-
-    def format_date(self, dt_string: str) -> str:
-        """Converts the datetime string to UTC ISO format.
-
-        Args:
-            dt_string (str): The date-time string to convert.
-
-        Returns:
-            str: The converted datetime object.
-        """
-        # Parse the datetime string to a datetime object
-        dt_with_tz = datetime.fromisoformat(dt_string)
-        # Convert to UTC and format as ISO string
-        dt_utc = dt_with_tz.astimezone(timezone.utc)
-        return dt_utc.strftime("%Y-%m-%dT%H:%M:%SZ")
