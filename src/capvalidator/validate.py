@@ -2,7 +2,6 @@ from importlib.resources import files
 from lxml import etree as ET
 from lxml.etree import DocumentInvalid
 from signxml import XMLVerifier, InvalidSignature
-from datetime import datetime, timezone
 
 
 class Validator:
