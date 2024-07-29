@@ -38,18 +38,20 @@ class DateResult:
         self.expiry = expiry
 
 
-def check_schema(cap) -> tuple:
+def check_schema(cap) -> ValidationResult:
     """Interface to the schema validation method of the Validator class, which
     is used in the CLI.
     """
-    return Validator(cap).schema()
+    passed, msg = Validator(cap).schema()
+    return ValidationResult(passed, msg)
 
 
-def check_signature(cap) -> tuple:
+def check_signature(cap) -> ValidationResult:
     """Interface to the signature verification method of the Validator class,
     which is used in the CLI.
     """
-    return Validator(cap).signature()
+    passed, msg = Validator(cap).signature()
+    return ValidationResult(passed, msg)
 
 
 def get_dates(cap) -> DateResult:
