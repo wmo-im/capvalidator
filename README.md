@@ -6,8 +6,8 @@
 
   <a href="https://github.com/wmo-im/capvalidator/blob/main/LICENSE" alt="License" ><img src="https://img.shields.io/badge/License-Apache_2.0-blue" alt="License Badge"></img></a>
   [![Super-Linter](https://github.com/wmo-im/capvalidator/actions/workflows/test-code-quality.yml/badge.svg)](https://github.com/marketplace/actions/super-linter)
-  ![Run-Unit-Tests](https://github.com/wmo-im/capvalidator/actions/workflows/run-unit-tests.yml/badge.svg)
-  ![Release-To-PyPI](https://github.com/wmo-im/capvalidator/actions/workflows/release-to-pypi.yml/badge.svg)
+  ![Unit-Tests](https://github.com/wmo-im/capvalidator/actions/workflows/unit-tests.yml/badge.svg)
+  ![Publish-To-PyPI](https://github.com/wmo-im/capvalidator/actions/workflows/publish-to-pypi.yml/badge.svg)
 
 </div>
 
