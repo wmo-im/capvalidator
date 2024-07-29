@@ -1,6 +1,12 @@
-name: Publish Python 🐍 distribution 📦 to PyPI
+name: Publish Distribution 📦 to PyPI
 
 on: push
+
+permissions:
+  contents: read
+  packages: write
+  issues: write
+  pull-requests: write
 
 jobs:
   build:
@@ -39,6 +45,7 @@ jobs:
       name: pypi
       url: https://pypi.org/p/capvalidator
     permissions:
+      contents: read
       id-token: write
 
     steps:
