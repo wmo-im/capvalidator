@@ -15,14 +15,17 @@ def cli():
 @click.option('--type', 'validation_type',
               type=click.Choice(['total', 'schema', 'signature']),
               required=False, default='total')
+@click.option('--strict/--no-strict', 'strict',
+              required=False, default=True,
+              help='Disable validation of the XML signature')
 @click.argument('cap_xml', type=click.File(mode="rb", errors="ignore"))
-def validate(ctx, cap_xml, validation_type) -> None:
+def validate(ctx, cap_xml, validation_type, strict=True) -> None:
     """Validate a CAP alert"""
 
     cap = cap_xml.read()
 
     if validation_type == "total":
-        result = validate_xml(cap)
+        result = validate_xml(cap, strict=strict)
     elif validation_type == "schema":
         result = check_schema(cap)
     elif validation_type == "signature":
