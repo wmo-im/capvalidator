@@ -28,7 +28,11 @@ pip install capvalidator
 
 ### 2A. Using the API
 
-We can perform a total validation of the CAP XML file:
+We can perform a total validation of the CAP XML file using `validate_xml(cap, strict)`.
+
+- `cap`: The CAP alert XML byte string.
+- `strict`: Whether or not signature validation is enforced. Defaults to `True`.
+
 ```python
 from capvalidator import validate_xml
 
@@ -37,7 +41,7 @@ with open(<cap-file-directory>, "rb") as f:
     cap = f.read()
 
 # Perform the validation
-result = validate_xml(cap)
+result = validate_xml(cap, strict=True)
 
 # Check the result
 passed = result.passed
@@ -49,7 +53,7 @@ if not passed:
 # Logic for handling valid CAP file
 ```
 
-Or, alternatively, a more refined validation:
+Or, alternatively, we can perform a more refined validation using `check_schema(cap)` and/or `check_signature(cap)`:
 ```python
 from capvalidator import check_schema, check_signature
 
@@ -81,7 +85,7 @@ if not passed:
 
 ```
 
-There is also a date extractor which you may find useful:
+There is also a date extractor `get_dates(cap)` which you may find useful:
 ```python
 from capvalidator import get_dates
 
@@ -103,6 +107,12 @@ We can perform a total validation of the CAP XML file:
 
 ```bash
 capvalidator validate <cap-file-directory>
+```
+
+To disable strict validation, that is, enforcement of a valid XML signature, we can use the `--no-strict` argument:
+
+```bash
+capvalidator validate <cap_file-directory> --no-strict
 ```
 
 Or, alternatively, more refined validations:
