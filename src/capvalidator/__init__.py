@@ -97,7 +97,7 @@ def validate_xml(cap, strict=True) -> ValidationResult:
             return signature_result
 
         # Otherwise, pass but warn the user
-        if signature_result.msg == "CAP alert has not been signed.":
+        if signature_result.message == "CAP alert has not been signed.":
             warning = "CAP XML file is valid but has not been signed." + \
                         "Consider signing alerts in the future."
             return ValidationResult(True, warning)
