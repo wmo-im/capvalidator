@@ -71,12 +71,14 @@ def check_signature(cap) -> ValidationResult:
     return ValidationResult(passed, msg)
 
 
-def validate_xml(cap) -> ValidationResult:
+def validate_xml(cap, strict=True) -> ValidationResult:
     """Performs the two steps of CAP validation: schema validation
     and signature verification.
 
     Args:
         cap (bytes): The CAP alert XML file byte contents to be validated.
+        strict (bool): Whether to enforce an XML signature or not.
+                        Defaults to True.
 
     Returns:
         ValidationResult: The validation status and the associated message
@@ -90,6 +92,18 @@ def validate_xml(cap) -> ValidationResult:
 
     signature_result = check_signature(cap)
     if not signature_result.passed:
-        return signature_result
+        # In strict mode, fail if the signature is invalid
+        if strict:
+            return signature_result
+
+        # Otherwise, pass but warn the user
+        if signature_result.msg == "CAP alert has not been signed.":
+            warning = "CAP XML file is valid but has not been signed." + \
+                        "Consider signing alerts in the future."
+            return ValidationResult(True, warning)
+        else:
+            warning = "CAP XML file is valid but the signature is invalid." + \
+                        "Consider signing alerts in the future."
+            return ValidationResult(True, warning)
 
     return ValidationResult(True, "CAP XML file is valid.")
