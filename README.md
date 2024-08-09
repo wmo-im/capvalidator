@@ -108,14 +108,19 @@ We can perform a total validation of the CAP XML file:
 ```bash
 capvalidator validate <cap-file-directory>
 ```
+By default this includes schema and signature validation.
 
-To disable strict validation, that is, enforcement of a valid XML signature, we can use the `--no-strict` argument:
+To manually enable/disable enforcement of a valid XML signature, we can use the `--strict` or `--no-strict` arguments respectively:
 
 ```bash
-capvalidator validate <cap_file-directory> --no-strict
+capvalidator validate --strict <cap_file-directory> 
 ```
 
-Or, alternatively, more refined validations:
+```bash
+capvalidator validate --no-strict <cap_file-directory> 
+```
+
+Or, alternatively, for more refined validations we can use the `--type` argument:
 ```bash
 capvalidator validate --type schema <cap-file-directory>
 ```
