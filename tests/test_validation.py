@@ -1,6 +1,6 @@
 import pytest
 from utils.helpers import get_fixtures
-from capvalidator import validate_xml, ValidationResult
+from capvalidator import validate_cap_message, ValidationResult
 
 ###############################################################################
 # Obtain the fixture categories and assign the expected results
@@ -32,8 +32,8 @@ for fixture in no_signature_fixture:
 
 
 @pytest.mark.parametrize("cap_name, expected_output", expected_results)
-def test_validate_xml(request, cap_name, expected_output):
-    """Tests the output of the validate_xml function over all
+def test_validate_cap_message(request, cap_name, expected_output):
+    """Tests the output of the validate_cap_message function over all
     CAP XML fixtures found in the data directory.
 
     Args:
@@ -48,7 +48,7 @@ def test_validate_xml(request, cap_name, expected_output):
     cap = request.getfixturevalue(cap_name)
 
     # Perform the validation
-    result = validate_xml(cap)
+    result = validate_cap_message(cap)
 
     # Check the result
     assert result.passed == expected_output.passed
