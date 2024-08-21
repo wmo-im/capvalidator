@@ -21,7 +21,7 @@
 
 from .validate import Validator
 
-__version__ = '0.1.0-dev3'
+__version__ = '0.1.0-dev4'
 
 
 class ValidationResult:
