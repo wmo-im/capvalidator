@@ -28,20 +28,20 @@ pip install capvalidator
 
 ### 2A. Using the API
 
-We can perform a total validation of the CAP XML file using `validate_xml(cap, strict)`.
+We can perform a total validation of the CAP XML file using `validate_cap_message(cap, strict)`.
 
 - `cap`: The CAP alert XML byte string.
 - `strict`: Whether or not signature validation is enforced. Defaults to `True`.
 
 ```python
-from capvalidator import validate_xml
+from capvalidator import validate_cap_message
 
 # Read the CAP XML file as a byte string
 with open(<cap-file-directory>, "rb") as f:
     cap = f.read()
 
 # Perform the validation
-result = validate_xml(cap, strict=True)
+result = validate_cap_message(cap, strict=True)
 
 # Check the result
 passed = result.passed

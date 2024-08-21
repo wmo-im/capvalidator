@@ -1,5 +1,5 @@
 import click
-from capvalidator import __version__, validate_xml, check_schema, check_signature  # noqa
+from capvalidator import __version__, validate_cap_message, check_schema, check_signature  # noqa
 
 
 @click.group()
@@ -25,7 +25,7 @@ def validate(ctx, cap_xml, validation_type, strict=True) -> None:
     cap = cap_xml.read()
 
     if validation_type == "total":
-        result = validate_xml(cap, strict=strict)
+        result = validate_cap_message(cap, strict=strict)
     elif validation_type == "schema":
         result = check_schema(cap)
     elif validation_type == "signature":

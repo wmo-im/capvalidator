@@ -71,7 +71,7 @@ def check_signature(cap) -> ValidationResult:
     return ValidationResult(passed, msg)
 
 
-def validate_xml(cap, strict=True) -> ValidationResult:
+def validate_cap_message(cap, strict=True) -> ValidationResult:
     """Performs the two steps of CAP validation: schema validation
     and signature verification.
 
