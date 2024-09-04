@@ -23,5 +23,8 @@ dependencies = [
 ]
 dynamic = ["version"]
 
+[project.scripts]
+capvalidator = "capvalidator:cli.cli"
+
 [tool.setuptools.dynamic]
 version = {attr = "capvalidator.__version__"}
